@@ -7,10 +7,14 @@ import { AddflightComponent } from './addflight/addflight.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ViewflightComponent } from './viewflight/viewflight.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes:Routes=[
   {
     path:"",component:AddflightComponent
+  },
+  {
+    path:"view",component:ViewflightComponent
   }
 ]
 
@@ -18,7 +22,8 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     AddflightComponent,
-    ViewflightComponent
+    ViewflightComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
