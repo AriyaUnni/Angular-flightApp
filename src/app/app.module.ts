@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ViewflightComponent } from './viewflight/viewflight.component';
 
 const appRoutes:Routes=[
   {
@@ -16,7 +17,8 @@ const appRoutes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    AddflightComponent
+    AddflightComponent,
+    ViewflightComponent
   ],
   imports: [
     BrowserModule,
