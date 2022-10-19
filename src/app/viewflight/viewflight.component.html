@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
 
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col">Id</th>
@@ -15,11 +15,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let i of flightData">
                     
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{i.id}}</td>
+                    <td>{{i.flightname}}</td>
+                    <td>{{i.origin}}</td>
+                    <td>{{i.designation}}</td>
+                    <td>{{i.capacity}}</td>
                   </tr>
                 
                 </tbody>

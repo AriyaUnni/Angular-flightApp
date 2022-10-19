@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-addflight',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddflightComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) { }
 
-  flightName=""
+  flightname=""
   origin=""
   designation=""
   capacity=""
@@ -18,14 +19,29 @@ export class AddflightComponent implements OnInit {
 
   readValues=()=>{
     let data={
-      "flightName":this.flightName,
+      "flightname":this.flightname,
       "origin":this.origin,
       "designation":this.designation,
       "capacity":this.capacity
     }
+
+
     console.log(data)
 
-    this.status=true
+    this.myapi.AddData(data).subscribe(
+      (response)=>{
+        console.log(response)
+        alert("Successfully added")
+
+      }
+    )
+
+       this.flightname=""
+        this.origin=""
+        this.designation=""
+        this.capacity=""
+
+        this.status=true
   }
 
   ngOnInit(): void {
